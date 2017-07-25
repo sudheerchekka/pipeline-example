@@ -1,16 +1,8 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: myfirstpipeline
+  name: pipeline-welcome
   namespace: cicd
-  selfLink: /oapi/v1/namespaces/cicd/buildconfigs/myfirstpipeline
-  uid: 753ffb15-718a-11e7-b1ca-be5867782ab0
-  resourceVersion: '6477'
-  creationTimestamp: '2017-07-25T22:41:54Z'
-  labels:
-    name: myfirstpipeline
-  annotations:
-    pipeline.alpha.openshift.io/uses: '[{"name": "welcome", "namespace": "", "kind": "DeploymentConfig"}]'
 spec:
   triggers:
     - type: GitHub
@@ -34,7 +26,7 @@ spec:
         openshiftBuild(namespace: 'development', buildConfig: 'welcome',
         showBuildLogs: 'true')
 
-        stage 'Deploy In Dev'
+        stage 'Deploy In Dev !!'
 
         openshiftDeploy(namespace: 'development', deploymentConfig: 'welcome')
 
@@ -61,5 +53,3 @@ spec:
   resources: {}
   postCommit: {}
   nodeSelector: null
-status:
-  lastVersion: 2
