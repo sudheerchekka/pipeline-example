@@ -26,7 +26,7 @@ spec:
         openshiftBuild(namespace: 'development', buildConfig: 'welcome',
         showBuildLogs: 'true')
 
-        stage 'Deploy In Dev !!'
+        stage 'Deploy In Dev'
 
         openshiftDeploy(namespace: 'development', deploymentConfig: 'welcome')
 
