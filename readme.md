@@ -1,3 +1,7 @@
+
+![](pipeline-example.jpg?raw=true "Optional Title")
+
+
 ## Creating your own pipeline
 
 ###Video 1: Creating your own pipeline
