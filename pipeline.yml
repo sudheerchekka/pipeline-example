@@ -40,11 +40,15 @@ spec:
         }
 
         sh "oc tag development/welcome:latest testing/welcome:promoteToQA"
+
         sh "oc project testing"
         // clean up. keep the imagestream
+
         sh "oc delete bc,dc,svc,route -l app=welcome -n testing"
         // deploy stage image
+
         sh "oc new-app welcome:promoteToQA -n testing"
+ 
         sh "oc expose svc/welcome -n testing"  
 
 
